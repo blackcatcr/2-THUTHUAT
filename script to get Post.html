@@ -1,0 +1,465 @@
+<script type='text/javascript'>
+    //<![CDATA[
+    imgr = new Array();
+    imgr[0] = "http://1.bp.blogspot.com/-ePP0fgB3eY8/T9ra5vc8GTI/AAAAAAAAAiI/Ifk6GlLjl4o/s1600/notimthumb.gif";
+    showRandomImg = true;
+
+    aBold = true;
+
+    summaryPost = 110;
+    summaryTitle = 25;
+
+    numposts = 6;
+    numposts1 = 1;
+    numposts2 = 4;
+    numposts3 = 4;
+    numposts4 = 6;
+    numposts5 = 5;
+    numposts6 = 7;
+    numposts7 = 8;
+    numposts8 = 3;
+
+
+    label1 = "Chung cư";
+    Title1 = "Chung cư";
+
+    label2 = "Bất động sản nghỉ dưỡng";
+    Title2 = "Bất động sản nghỉ dưỡng";
+
+    label3 = "Liền kề - Biệt thự";
+    Title3 = "Liền kề - Biệt thự";
+
+    label4 = "Chung cư";
+    Title4 = "Dự án mới";
+
+    label5 = "Tin tức";
+    Title5 = "Tin tức";
+
+    label6 = "Video";
+    Title6 = "Video";
+
+    Title13 = "Xem tất cả";
+
+    var classicMode = false;
+    var summary = 30;
+    var indent = 3;
+
+    function removeHtmlTag(a, b) {
+        for (var c = a.split("<"), d = 0; d < c.length; d++) - 1 != c[d].indexOf(">") && (c[d] = c[d].substring(c[d].indexOf(">") + 1, c[d].length));
+        return c = c.join(""), c = c.substring(0, b - 1)
+    }
+
+
+/*Lấy link , tiêu đề bài viết và ảnh*/ 
+    function showrecentposts2(e) {
+        j = showRandomImg ? Math.floor((imgr.length + 1) * Math.random()) : 0, img = new Array;
+        for (var f = 0; f < 10; f++) {
+            var h, i = e.feed.entry[f],
+                k = i.title.$t;
+            if (f == e.feed.entry.length) break;
+            for (var l = 0; l < i.link.length; l++)
+                if ("alternate" == i.link[l].rel) {
+                    h = i.link[l].href;
+                    break
+                }
+            for (var l = 0; l < i.link.length; l++)
+                if ("replies" == i.link[l].rel && "text/html" == i.link[l].type) {
+                    i.link[l].title.split(" ")[0];
+                    break
+                }
+            if ("content" in i) var m = i.content.$t;
+            else if ("summary" in i) var m = i.summary.$t;
+            else var m = "";
+            postdate = i.published.$t, j > imgr.length - 1 && (j = 0), img[f] = imgr[j], s = m, a = s.indexOf("<img"), b = s.indexOf('src="', a), c = s.indexOf('"', b + 5), d = s.substr(b + 5, c - b - 5), -1 != a && -1 != b && -1 != c && "" != d && (img[f] = d);
+            for (var n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], o = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], p = (postdate.split("-")[2].substring(0, 2), postdate.split("-")[1]), q = (postdate.split("-")[0], 0); q < n.length; q++)
+                if (parseInt(p) == n[q]) {
+                    p = o[q];
+                    break
+                }
+            var r = '<li class="he" ><a class"hi" href="'+ h +'" title="'+ k +'"> <span> <img width="150" height="150" src="'+ img[f] +'" alt=""/></span></a><a href="' + h + '">'+ k +"</a></li>";
+            document.write(r), j++
+        }
+    }
+
+
+
+function showrecentposts22(e) {
+        j = showRandomImg ? Math.floor((imgr.length + 1) * Math.random()) : 0, img = new Array;
+        for (var f = 0; f < 10; f++) {
+            var h, i = e.feed.entry[f],
+                k = i.title.$t;
+            if (f == e.feed.entry.length) break;
+            for (var l = 0; l < i.link.length; l++)
+                if ("alternate" == i.link[l].rel) {
+                    h = i.link[l].href;
+                    break
+                }
+            for (var l = 0; l < i.link.length; l++)
+                if ("replies" == i.link[l].rel && "text/html" == i.link[l].type) {
+                    i.link[l].title.split(" ")[0];
+                    break
+                }
+            if ("content" in i) var m = i.content.$t;
+            else if ("summary" in i) var m = i.summary.$t;
+            else var m = "";
+            postdate = i.published.$t, j > imgr.length - 1 && (j = 0), img[f] = imgr[j], s = m, a = s.indexOf("<img"), b = s.indexOf('src="', a), c = s.indexOf('"', b + 5), d = s.substr(b + 5, c - b - 5), -1 != a && -1 != b && -1 != c && "" != d && (img[f] = d);
+            for (var n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], o = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], p = (postdate.split("-")[2].substring(0, 2), postdate.split("-")[1]), q = (postdate.split("-")[0], 0); q < n.length; q++)
+                if (parseInt(p) == n[q]) {
+                    p = o[q];
+                    break
+                }
+ var r = '<div class="col-sm-6 col-md-4 post-item equal-col-height"><div class="wrap-item"><div class="img-item"><a href="'+ h +'"><img width="360" height="200" src="'+ img[f] +'" class="attachment-thumb_img_post size-thumb_img_post wp-post-image" alt="quảng cáo treo banner, băng rôn, cờ phướn" sizes="(max-width: 360px) 100vw, 360px"/></a></div><div class="info-item"><div class="address-item" style="height: 50px;"><i class="fa fa-map-marker" aria-hidden="true">Hà Nội, Việt Nam</i></div><div class="body-item" style="height: 138px;"><a href="'+ h +'">'+ k +'</a><p>Quảng cáo treo banner, băng rôn, cờ phướn là hình thức marketing truyền thống nhưng...</p></div><div class="price"><span class="views"><i class="fa fa-eye" aria-hidden="true"></i><span>55</span></span><a target="_blank" href="'+ h +'"><span>Read more</span></a></div></div></div></div>';
+document.write(r), j++
+        }
+    }
+
+
+function showrecentposts23(e,json) {
+        j = showRandomImg ? Math.floor((imgr.length + 1) * Math.random()) : 0, img = new Array;
+        for (var f = 0; f < 10; f++) {
+            var h, i = e.feed.entry[f],
+                k = i.title.$t;
+            if (f == e.feed.entry.length) break;
+            for (var l = 0; l < i.link.length; l++)
+                if ("alternate" == i.link[l].rel) {
+                    h = i.link[l].href;
+                    break
+                }
+            for (var l = 0; l < i.link.length; l++)
+                if ("replies" == i.link[l].rel && "text/html" == i.link[l].type) {
+                    i.link[l].title.split(" ")[0];
+                    break
+                }
+            if ("content" in i) var m = i.content.$t;
+            else if ("summary" in i) var m = i.summary.$t;
+            else var m = "";
+            var mcontent = m.substring(0,100)
+
+ if ("media$thumbnail" in i) var hinhanh = e.feed.entry[f].media$thumbnail.url;
+        else var hinhanh = "";
+        var hinhanhresize = hinhanh.replace(/\/s72\-c/g, "\/s172-c")
+
+if ("published" in i) var thoigian = e.feed.entry[f].published.$t;
+        else var thoigian = ""; 
+var ngay = thoigian.substring(8, 10);
+var n = thoigian.substring(5, 7)
+            
+ if ("category" in i) var categoryx = e.feed.entry[f].category[0].term;
+        else var categoryx = "";
+
+            postdate = i.published.$t, j > imgr.length - 1 && (j = 0), img[f] = imgr[j], s = m, a = s.indexOf("<img"), b = s.indexOf('src="', a), c = s.indexOf('"', b + 5), d = s.substr(b + 5, c - b - 5), -1 != a && -1 != b && -1 != c && "" != d && (img[f] = d);
+            for (var n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], o = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], p = (postdate.split("-")[2].substring(0, 2), postdate.split("-")[1]), q = (postdate.split("-")[0], 0); q < n.length; q++)
+                if (parseInt(p) == n[q]) {
+                    p = o[q];
+                    break
+                }
+ var r = '<div class="col-sm-4 col-md-4 post-item post-item-"><div class="wrap-item"><div class="img-item"><a href="'+ h +'"><img width="360" height="200" src="'+ hinhanh +'" class="attachment-thumb_img_post size-thumb_img_post wp-post-image" alt="tuyển dụng" sizes="(max-width: 360px) 100vw, 360px"/></a></div><div class="info-item"><div class="row"><div class="info-item-left col-xs-3 col-sm-2"><div class="post-date"><h5>'+ ngay  +'</h5><h6>'+ p +'</h6></div></div><div class="info-item-right col-xs-9 col-sm-10"><h5><a href="'+ h +'" rel="category tag">'+ categoryx +'</a></h5><a href="'+ h +'">'+ k +"</a><p> 1. Bạn sẽ làm việc gì? Bạn sẽ đến công ty vào lúc 8h30 sáng chẳng phải lo tắc đường và đi từ... </p></div></div></div></div></div>";
+document.write(r), j++
+        }
+    }
+
+
+/*Lấy link, tiêu đề , ảnh và summary của bài viết */
+    function showrecentposts8(e) {
+        j = showRandomImg ? Math.floor((imgr.length + 1) * Math.random()) : 0, img = new Array;
+        for (var f = 0; f < numposts8; f++) {
+            var h, i = e.feed.entry[f],
+                k = i.title.$t;
+            if (f == e.feed.entry.length) break;
+            for (var l = 0; l < i.link.length; l++)
+                if ("alternate" == i.link[l].rel) {
+                    h = i.link[l].href;
+                    break
+                }
+            for (var l = 0; l < i.link.length; l++)
+                if ("replies" == i.link[l].rel && "text/html" == i.link[l].type) {
+                    i.link[l].title.split(" ")[0];
+                    break
+                }
+            if ("content" in i) var m = i.content.$t;
+            else if ("summary" in i) var m = i.summary.$t;
+            else var m = "";
+            postdate = i.published.$t, j > imgr.length - 1 && (j = 0), img[f] = imgr[j], s = m, a = s.indexOf("<img"), b = s.indexOf('src="', a), c = s.indexOf('"', b + 5), d = s.substr(b + 5, c - b - 5), -1 != a && -1 != b && -1 != c && "" != d && (img[f] = d);
+            for (var n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], o = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], q = (postdate.split("-")[2].substring(0, 2), postdate.split("-")[1]), r = (postdate.split("-")[0], 0); r < n.length; r++)
+                if (parseInt(q) == n[r]) {
+                    q = o[r];
+                    break
+                }
+            var t = '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 cotsp"><div class="anhiuem"><p class="left"><a href="' + h + '"><img class="alignnone" src="' + img[f] + '"/></a></p><div class="sliderPostInfo"><h2 class="featuredTitle"><a href="' + h + '">' + k + "</a></h2><p> " + m + "</p></div></div></div>";
+            document.write(t), j++
+        }
+    }
+
+    function stripHtmlTags(a, b) {
+        return a.replace(/<.*?>/gi, "").split(/\s+/).slice(0, b - 1).join(" ")
+    }
+
+    function getSummaryLikeWP(a) {
+        return document.getElementById(a).innerHTML.split(/<!--\s*more\s*-->/)[0]
+    }
+
+    function getSummaryImproved(a, b) {
+        var c = /<.*?>/gi,
+            d = /<br.*?>/gi,
+            e = /(<\/{1}p>)|(<\/{1}div>)/gi,
+            f = /(<style.*?\/{1}style>)|(<script.*?\/{1}script>)|(<table.*?\/{1}table>)|(<form.*?\/{1}form>)|(<code.*?\/{1}code>)|(<pre.*?\/{1}pre>)/gi;
+        a = a.replace(f, ""), a = a.replace(e, "<br /> ").split(d);
+        for (var g = 0; g < a.length; g++) a[g] = a[g].replace(c, "");
+        var h = new Array;
+        for (var g in a) /[a-zA-Z0-9]/.test(a[g]) && h.push(a[g]);
+        for (var i = "", j = "", g = 0; g < indent; g++) j += " ";
+        if (h.join("<br/>").split(" ").length < b - 1) i = h.join(j + " <br/>");
+        else
+            for (var g = 0; i.split(" ").length < b;) i += j + " " + h[g] + "<br/>", g++;
+        return i
+    }
+
+
+/*Cần check lại */
+    function createSummaryAndThumb(a, b, c, d, e) {
+        var f = c,
+            b = b,
+            g = document.getElementById(a),
+            h = g.innerHTML;
+        if (/<!--\s*more\s*-->/.test(h)) g.innerHTML = getSummaryLikeWP(a), g.style.display = "block";
+        else {
+            var i = "",
+                j = g.getElementsByTagName("img");
+            summary;
+            j.length >= 1 && (i = '<p class="left"><a href="' + f + '"><img  alt="' + b + '" title="' + b + '" src="' + j[0].src + '"></a></p>');
+            var l = "" + i + '<h2><a href="' + f + '">' + b + '</a></h2><div class="entrybaiviet">' + stripHtmlTags(h, summary) + '...<div class="clear"></div>';
+            g.innerHTML = l, g.style.display = "block"
+        }
+    }
+
+
+    //]]>
+</script>
+
+
+
+<!-- // resize anh ve kich thuoc ban dau -->
+var hinhanhresize = hinhanh.replace(/\/s72\-c/g, "\/")
+<!-- //resize veef kichs thuowcs 360- NOTE: đưa ảnh về kích thước natural của ảnh- sau căn chỉnh bằng thẻ bao ngoài ảnh--> 
+var hinhanhresize = hinhanh.replace(/\/s72\-c/g, "\/s360-c")
+
+<!-- Lấy summary theo số kí tự cần -->
+ if ("content" in i) var m = i.content.$t;
+            else if ("summary" in i) var m = i.summary.$t;
+            else var m = "";
+            var mcontent = m.substring(0,100)
+<!-- Lấy và resize hình ảnh  -->
+ if ("media$thumbnail" in i) var hinhanh = e.feed.entry[f].media$thumbnail.url;
+        else var hinhanh = "";
+        var hinhanhresize = hinhanh.replace(/\/s72\-c/g, "\/s172-c")
+<!-- Lấy ngày của bài đăng --- tháng là biến p trong recentposts23 -->
+if ("published" in i) var thoigian = e.feed.entry[f].published.$t;
+        else var thoigian = ""; 
+var ngay = thoigian.substring(8, 10);
+var n = thoigian.substring(5, 7)
+<!--  Lấy category của bài đăng  -->           
+ if ("category" in i) var categoryx = e.feed.entry[f].category[0].term;
+        else var categoryx = "";
+
+
+
+
+
+
+HIỆN BÀI ĐĂNG THEO NHÃN 
+<!-- Hiện các bài đăng theo nhãn bình thường từ default -->
+
+<div class='tienichphai'>
+<!-- In ra tiêu đề bài viết  -->
+<h3 class='widgettitle'>
+<script type='text/javascript'>//<![CDATA[     
+document.write("<a href='/search/label/"+label5+"'?max-results=10'>"+Title5+"</a>");
+    //]]></script>
+</h3>
+<script>document.write(&quot;&lt;script src=\&quot;/feeds/posts/default/-/&quot;+label5+&quot;?max-results=&quot;+numposts4+&quot;&amp;orderby=published&amp;alt=json-in-script&amp;callback=showrecentposts2\&quot;&gt;&lt;\/script&gt;&quot;);</script>
+</div>
+
+------------------------------
+<div class='tienichphai'>
+<h3 class='widgettitle'>
+<script>
+    						 document.write('<a href="/search/label/'+label5+'?max-results=10">'+Title5+'</a>');							 
+					     </script>
+</h3>
+<script>    				
+						 document.write("<script src=\"/feeds/posts/default/-/"+label5+"?max-results="+numposts4+"&orderby=published&alt=json-in-script&callback=showrecentposts2\"><\/script>");
+					 </script>
+</div>
+
+
+
+BLOGGER API : http://www.danpros.com/2013/08/blogger-json-feed-api
+// lấy bài đăng theo nhãn từ summary ------------------------
+<script>        //<![CDATA[                 
+                         document.write("<script src=\"/feeds/posts/summary/-/"+label4+"?max-results="+numposts4+"&orderby=published&alt=json-in-script&callback=showrecentposts22\"><\/script>");
+                    //]]>    </script>
+
+----
+lấy bài mới nhất từ summary
+ <script>document.write(&quot;&lt;script src=\&quot;/feeds/posts/summary?max-results=&quot;+numposts4+&quot;&amp;alt=json-in-script&amp;callback=showrecentposts23\&quot;&gt;&lt;\/script&gt;&quot;);</script>
+ ------------------------------------------------------
+
+
+
+
+
+
+'<li class="he" ><a class"hi" href="'+ h +'" title="'+ k +'"> <span> <img width="150" height="150" src="'+ img[f] +'" alt=""/></span></a><a href="' + h + '">'+ k +"</a></li>"
+
+viết html sau đó nối lại sau bằng các dấu nháy , ngoài vùng + h + đều cần nháy . okay
+
+
+
+
+
+
+
+
+//RECENT POST -------------------
+<b:section id='thanhbenphai'>
+    <b:widget id='PopularPosts2' locked='false' title='Recent post' type='PopularPosts' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+        <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+        <b:widget-setting name='showSnippets'>false</b:widget-setting>
+        <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'><h3 class='widgettitle'><data:title/></h3></b:if>
+  <div class='widget-content popular-posts'>
+    <ul>
+      <b:loop values='data:posts' var='post'>
+      <li>
+        <b:if cond='!data:showThumbnails'>
+          <b:if cond='!data:showSnippets'>
+            <!-- (1) No snippet/thumbnail -->
+            <a expr:href='data:post.href'><data:post.title/></a>
+          <b:else/>
+            <!-- (2) Show only snippets -->
+            <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            <div class='item-snippet'><data:post.snippet/></div>
+          </b:if>
+        <b:else/>
+          <!-- (3) Show only thumbnails or (4) Snippets and thumbnails. -->
+          <div expr:class='data:showSnippets ? &quot;item-content&quot; : &quot;item-thumbnail-only&quot;'>
+            <b:if cond='data:post.featuredImage.isResizable or data:post.thumbnail'>
+              <div class='item-thumbnail'>
+                <a expr:href='data:post.href' target='_blank'>
+                  <b:with value='data:post.featuredImage.isResizable                                  ? resizeImage(data:post.featuredImage, 102, &quot;1:1&quot;)                                  : data:post.thumbnail' var='image'>
+                    <img alt='' border='0' expr:src='data:image'/>
+                  </b:with>
+                </a>
+              </div>
+            </b:if>
+            <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            <b:if cond='data:showSnippets'>
+              <div class='item-snippet'><data:post.snippet/></div>
+            </b:if>
+          </div>
+          <div style='clear: both;'/>
+        </b:if>
+      </li>
+      </b:loop>
+    </ul>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+    </b:widget>
+  </b:section>
+
+
+  // LAST POST --------------
+  <!-- lastest post -->
+<div class='tienichphai'>
+<h3 class='widgettitle'>
+<a href='/search/label/'>Lastest post</a>
+</h3>
+<script>document.write(&quot;&lt;script src=\&quot;/feeds/posts/default?max-results=&quot;+numposts4+&quot;&amp;orderby=updated&amp;alt=json-in-script&amp;callback=showrecentposts2\&quot;&gt;&lt;\/script&gt;&quot;);</script>
+</div>
+<!--lastest post end-->
+
+--------------------------------------
+ <!--  Đã fix orderby  -->
+  <!-- lastest post -->
+<div class='tienichphai'>
+<h3 class='widgettitle'>
+<a href='/search/label/'>Lastest post</a>
+</h3>
+<script>document.write(&quot;&lt;script src=\&quot;/feeds/posts/default?max-results=&quot;+numposts4+&quot;&amp;alt=json-in-script&amp;callback=showrecentposts2\&quot;&gt;&lt;\/script&gt;&quot;);</script>
+</div>
+<!--lastest post end-->
+
+
+//RELATED POST
+https://helplogger.blogspot.com/2012/03/how-to-add-related-posts-widget-to.html 
+
+<!-- Trước thẻ </head> copy đoạn  -->
+<!--Related Posts with thumbnails Scripts and Styles Start-->
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<style type='text/css'>
+#related-posts{float:left;width:auto;}
+#related-posts a{border-right: 1px dotted #eaeaea;}
+#related-posts h4{margin-top: 10px;background:none;font:18px Oswald;padding:3px;color:#999999; text-transform:uppercase;}
+#related-posts .related_img {margin:5px;border:2px solid #f2f2f2;object-fit: cover;/* Change width */ width:110px;height:100px;-webkit-border-radius: 5px;-moz-border-radius: 5px; border-radius: 5px; }
+#related-title {color:#333;text-align:center;text-transform:capitalize;padding: 0px 5px 10px;font-size:12px;/* Change width */width:110px; height: 40px;}
+</style>
+<script type='text/javascript'>
+//<![CDATA[
+var relatedTitles=new Array();var relatedTitlesNum=0;var relatedUrls=new Array();var thumburl=new Array();function related_results_labels_thumbs(json){for(var i=0;i<json.feed.entry.length;i++){var entry=json.feed.entry[i];relatedTitles[relatedTitlesNum]=entry.title.$t;try{thumburl[relatedTitlesNum]=entry.gform_foot.url}catch(error){s=entry.content.$t;a=s.indexOf("<img");b=s.indexOf("src=\"",a);c=s.indexOf("\"",b+5);d=s.substr(b+5,c-b-5);if((a!=-1)&&(b!=-1)&&(c!=-1)&&(d!="")){thumburl[relatedTitlesNum]=d}else thumburl[relatedTitlesNum]='http://2.bp.blogspot.com/-ex3V86fj4dQ/UrCQQa4cLsI/AAAAAAAAFdA/j2FCTmGOrog/s1600/no-thumbnail.png'}if(relatedTitles[relatedTitlesNum].length>35)relatedTitles[relatedTitlesNum]=relatedTitles[relatedTitlesNum].substring(0,35)+"...";for(var k=0;k<entry.link.length;k++){if(entry.link[k].rel=='alternate'){relatedUrls[relatedTitlesNum]=entry.link[k].href;relatedTitlesNum++}}}}function removeRelatedDuplicates_thumbs(){var tmp=new Array(0);var tmp2=new Array(0);var tmp3=new Array(0);for(var i=0;i<relatedUrls.length;i++){if(!contains_thumbs(tmp,relatedUrls[i])){tmp.length+=1;tmp[tmp.length-1]=relatedUrls[i];tmp2.length+=1;tmp3.length+=1;tmp2[tmp2.length-1]=relatedTitles[i];tmp3[tmp3.length-1]=thumburl[i]}}relatedTitles=tmp2;relatedUrls=tmp;thumburl=tmp3}function contains_thumbs(a,e){for(var j=0;j<a.length;j++)if(a[j]==e)return true;return false}function printRelatedLabels_thumbs(){for(var i=0;i<relatedUrls.length;i++){if((relatedUrls[i]==currentposturl)||(!(relatedTitles[i]))){relatedUrls.splice(i,1);relatedTitles.splice(i,1);thumburl.splice(i,1);i--}}var r=Math.floor((relatedTitles.length-1)*Math.random());var i=0;if(relatedTitles.length>0)document.write('<h4>'+relatedpoststitle+'</h4>');document.write('<div style="clear: both;"/>');while(i<relatedTitles.length&&i<20&&i<maxresults){document.write('<a style="text-decoration:none;margin:0 4px 10px 0;float:left;');if(i!=0)document.write('"');else document.write('"');document.write(' href="'+relatedUrls[r]+'"><img class="related_img" src="'+thumburl[r]+'"/><br/><div id="related-title">'+relatedTitles[r]+'</div></a>');if(r<relatedTitles.length-1){r++}else{r=0}i++}document.write('</div>');relatedUrls.splice(0,relatedUrls.length);thumburl.splice(0,thumburl.length);relatedTitles.splice(0,relatedTitles.length)}
+//]]>
+</script>
+</b:if>
+<!--Related Posts with thumbnails Scripts and Styles End-->
+
+
+//copy vào khoảng cuối chân trang - gần div post-footer  : <div class='post-footer'>
+Nếu vẫn ko hiện tìm <b:includable id='postQuickEdit' var='post'> -> phía trên có thẻ </b:includable> -> paste trên thẻ đó 
+
+
+
+
+<!-- Related Posts with Thumbnails Code Start-->
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<div id='related-posts'>
+<b:loop values='data:post.labels' var='label'>
+<b:if cond='data:label.isLast != &quot;true&quot;'>
+</b:if>
+<script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=related_results_labels_thumbs&amp;max-results=5&quot;' type='text/javascript'/></b:loop>
+<script type='text/javascript'>
+var currentposturl=&quot;<data:post.url/>&quot;;
+var maxresults=5;/* Chú ý thay đổi số bài đăng*/
+var relatedpoststitle=&quot;<b>Related Posts:</b>&quot;;
+removeRelatedDuplicates_thumbs();
+printRelatedLabels_thumbs();
+</script>
+</div><div class='clear'/><div style="font-size: 9px;float: right; margin: 5px;"><a  style="font-size: 9px; text-decoration: none;" href="http://helplogger.blogspot.com/2012/03/how-to-add-related-posts-widget-to.html" rel="nofollow" >Related Posts Widget</a></div>
+</b:if>
+<!-- Related Posts with Thumbnails Code End-->
+
+
+//end - related post 
+
+
+
+
+POPULAR POST 
+<!-- EZ added popular post --> 
+https://techtspot.blogspot.com/2016/03/add-popular-posts-gadget-in-blogger.html 
+<!-- 5-popular-posts-widget-for-blogger -->
+https://helplogger.blogspot.com/2015/09/5-popular-posts-widget-for-blogger.html 
+
+
+
+
+
+
+<!-- Tìm hiều cách orderby -->
+https://stackoverflow.com/questions/18544250/alphabetize-a-list-using-orderby
+https://newbloggerthemes.com/blog/add-recent-posts-widget-to-blogger/
+https://gicovietnam.blogspot.com/2017/06/code-tao-bai-viet-lien-quan-cho-blogsot.html
+

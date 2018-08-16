@@ -1,0 +1,360 @@
+﻿<div class="hotline">
+    <div id="zaloring-alo-phoneIcon" class="zaloring-alo-phone zaloring-alo-green zaloring-alo-show">
+        <div class="zaloring-alo-ph-circle"></div>
+        <div class="zaloring-alo-ph-circle-fill"></div>
+        <div class="zaloring-alo-ph-img-circle">
+            <a class="pps-btn-img " title="Liên hệ" href="tel:0934666994"> <img src="https://lh4.googleusercontent.com/-jipOkVbgvtk/WPd_CdNwOoI/AAAAAAAAEn0/iYoBqhrSHWgSGDOiEvvEzTYa-khhJt9NACLcB/s1600/v8TniL3.png" alt="Liên hệ" width="50" class="img-responsive"> </a>
+        </div>
+    </div>
+</div>
+<style>
+/* HOTLINE */
+.zaloring-alo-phone {position:fixed;visibility:hidden;background-color:transparent;width:200px;height:200px;
+ cursor:pointer;z-index:200000!important;right:15px;bottom:-20px;left:-50px;display:block;
+ -webkit-backface-visibility:hidden;
+ -webkit-transform:translateZ(0);
+ transition:visibility .5s;
+}
+.zaloring-alo-phone.zaloring-alo-show {visibility:visible}
+.zaloring-alo-phone.zaloring-alo-static {opacity:.6}
+.zaloring-alo-phone.zaloring-alo-hover,.zaloring-alo-phone:hover {opacity:1}
+.zaloring-alo-ph-circle {width:160px;height:160px;top:20px;left:20px;position:absolute;
+ background-color:transparent;border-radius:100%;border:2px solid rgba(30,30,30,0.4);
+ opacity:.1;
+ -webkit-animation:zaloring-alo-circle-anim 1.2s infinite ease-in-out;
+ animation:zaloring-alo-circle-anim 1.2s infinite ease-in-out;
+ transition:all .5s;
+ -webkit-transform-origin:50% 50%;
+ -ms-transform-origin:50% 50%;
+ transform-origin:50% 50%
+}
+.zaloring-alo-phone.zaloring-alo-active .zaloring-alo-ph-circle {
+    -webkit-animation:zaloring-alo-circle-anim 1.1s infinite ease-in-out!important;
+    animation:zaloring-alo-circle-anim 1.1s infinite ease-in-out!important
+}
+.zaloring-alo-phone.zaloring-alo-static .zaloring-alo-ph-circle {
+    -webkit-animation:zaloring-alo-circle-anim 2.2s infinite ease-in-out!important;
+    animation:zaloring-alo-circle-anim 2.2s infinite ease-in-out!important
+}
+.zaloring-alo-phone.zaloring-alo-hover .zaloring-alo-ph-circle,.zaloring-alo-phone:hover .zaloring-alo-ph-circle {
+    border-color:#00aff2;
+    opacity:.5
+}
+.zaloring-alo-phone.zaloring-alo-green.zaloring-alo-hover .zaloring-alo-ph-circle,.zaloring-alo-phone.zaloring-alo-green:hover .zaloring-alo-ph-circle {
+    border-color:#272d6b;
+    opacity:.5
+}
+.zaloring-alo-phone.zaloring-alo-green .zaloring-alo-ph-circle {
+    border-color:#00aff2;
+    opacity:.5
+}
+.zaloring-alo-phone.zaloring-alo-gray.zaloring-alo-hover .zaloring-alo-ph-circle,.zaloring-alo-phone.zaloring-alo-gray:hover .zaloring-alo-ph-circle {
+    border-color:#ccc;
+    opacity:.5
+}
+.zaloring-alo-phone.zaloring-alo-gray .zaloring-alo-ph-circle {
+    border-color:#75eb50;
+    opacity:.5
+}
+.zaloring-alo-ph-circle-fill {width:100px;height:100px;top:50px;left:50px;position:absolute;background-color:#000;
+ border-radius:100%;border:2px solid transparent;
+ -webkit-animation:zaloring-alo-circle-fill-anim 2.3s infinite ease-in-out;
+ animation:zaloring-alo-circle-fill-anim 2.3s infinite ease-in-out;
+ transition:all .5s;
+ -webkit-transform-origin:50% 50%;
+ -ms-transform-origin:50% 50%;
+ transform-origin:50% 50%
+}
+.zaloring-alo-phone.zaloring-alo-active .zaloring-alo-ph-circle-fill {
+    -webkit-animation:zaloring-alo-circle-fill-anim 1.7s infinite ease-in-out!important;
+    animation:zaloring-alo-circle-fill-anim 1.7s infinite ease-in-out!important
+}
+.zaloring-alo-phone.zaloring-alo-static .zaloring-alo-ph-circle-fill {
+    -webkit-animation:zaloring-alo-circle-fill-anim 2.3s infinite ease-in-out!important;
+    animation:zaloring-alo-circle-fill-anim 2.3s infinite ease-in-out!important;
+    opacity:0!important
+}
+.zaloring-alo-phone.zaloring-alo-hover .zaloring-alo-ph-circle-fill,.zaloring-alo-phone:hover .zaloring-alo-ph-circle-fill {
+    background-color:rgba(39,45,107,0.5);
+    opacity:.75!important
+}
+.zaloring-alo-phone.zaloring-alo-green.zaloring-alo-hover .zaloring-alo-ph-circle-fill,.zaloring-alo-phone.zaloring-alo-green:hover .zaloring-alo-ph-circle-fill {
+    background-color:rgba(39,45,107,0.5);
+    opacity:.75!important
+}
+.zaloring-alo-phone.zaloring-alo-green .zaloring-alo-ph-circle-fill {
+    background-color:rgba(0,175,242,0.5);
+}
+.zaloring-alo-phone.zaloring-alo-gray.zaloring-alo-hover .zaloring-alo-ph-circle-fill,.zaloring-alo-phone.zaloring-alo-gray:hover .zaloring-alo-ph-circle-fill {
+    background-color:rgba(204,204,204,0.5);
+    opacity:.75!important
+}
+.zaloring-alo-phone.zaloring-alo-gray .zaloring-alo-ph-circle-fill {
+    background-color:rgba(117,235,80,0.5);
+    opacity:.75!important
+}
+.zaloring-alo-ph-img-circle {
+    width:60px;
+    height:60px;
+    top:70px;
+    left:70px;
+    position:absolute;
+    background: rgba(30,30,30,0.1) url(http://trungtamsuckhoe.com/wp-content/uploads/2017/07/zalo.png) no-repeat center center;
+    background-size: 58px;
+    border-radius:100%;
+    border:2px solid transparent;
+    -webkit-animation:zaloring-alo-circle-img-anim 1s infinite ease-in-out;
+    animation:zaloring-alo-circle-img-anim 1s infinite ease-in-out;
+    -webkit-transform-origin:50% 50%;
+    -ms-transform-origin:50% 50%;
+    transform-origin:50% 50%
+}
+
+.zaloring-alo-phone.zaloring-alo-active .zaloring-alo-ph-img-circle {
+    -webkit-animation:zaloring-alo-circle-img-anim 1s infinite ease-in-out!important;
+    animation:zaloring-alo-circle-img-anim 1s infinite ease-in-out!important
+}
+
+.zaloring-alo-phone.zaloring-alo-static .zaloring-alo-ph-img-circle {
+    -webkit-animation:zaloring-alo-circle-img-anim 0 infinite ease-in-out!important;
+    animation:zaloring-alo-circle-img-anim 0 infinite ease-in-out!important
+}
+
+.zaloring-alo-phone.zaloring-alo-hover .zaloring-alo-ph-img-circle,.zaloring-alo-phone:hover .zaloring-alo-ph-img-circle {
+    background-color:#00aff2;
+}
+
+.zaloring-alo-phone.zaloring-alo-green.zaloring-alo-hover .zaloring-alo-ph-img-circle,.zaloring-alo-phone.zaloring-alo-green:hover .zaloring-alo-ph-img-circle {
+    background-color:#272d6b;
+}
+
+.zaloring-alo-phone.zaloring-alo-green .zaloring-alo-ph-img-circle {
+    background-color:#00aff2;
+}
+
+.zaloring-alo-phone.zaloring-alo-gray.zaloring-alo-hover .zaloring-alo-ph-img-circle,.zaloring-alo-phone.zaloring-alo-gray:hover .zaloring-alo-ph-img-circle {
+    background-color:#ccc;
+}
+
+.zaloring-alo-phone.zaloring-alo-gray .zaloring-alo-ph-img-circle {
+    background-color:#75eb50
+}
+
+@-webkit-keyframes zaloring-alo-circle-anim {
+    0% {
+        -webkit-transform:rotate(0) scale(.5) skew(1deg);
+        -webkit-opacity:.1
+    }
+
+    30% {
+        -webkit-transform:rotate(0) scale(.7) skew(1deg);
+        -webkit-opacity:.5
+    }
+
+    100% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+        -webkit-opacity:.1
+    }
+}
+
+@-webkit-keyframes zaloring-alo-circle-fill-anim {
+    0% {
+        -webkit-transform:rotate(0) scale(.7) skew(1deg);
+        opacity:.2
+    }
+
+    50% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+        opacity:.2
+    }
+
+    100% {
+        -webkit-transform:rotate(0) scale(.7) skew(1deg);
+        opacity:.2
+    }
+}
+
+@-webkit-keyframes zaloring-alo-circle-img-anim {
+    0% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg)
+    }
+
+    10% {
+        -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+    }
+
+    20% {
+        -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+    }
+
+    30% {
+        -webkit-transform:rotate(-25deg) scale(1) skew(1deg)
+    }
+
+    40% {
+        -webkit-transform:rotate(25deg) scale(1) skew(1deg)
+    }
+
+    50% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg)
+    }
+
+    100% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg)
+    }
+}
+
+@-webkit-keyframes zaloring-alo-circle-anim {
+    0% {
+        -webkit-transform:rotate(0) scale(.5) skew(1deg);
+                transform:rotate(0) scale(.5) skew(1deg);
+        opacity:.1
+    }
+
+    30% {
+        -webkit-transform:rotate(0) scale(.7) skew(1deg);
+                transform:rotate(0) scale(.7) skew(1deg);
+        opacity:.5
+    }
+
+    100% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+                transform:rotate(0) scale(1) skew(1deg);
+        opacity:.1
+    }
+}
+
+@keyframes zaloring-alo-circle-anim {
+    0% {
+        -webkit-transform:rotate(0) scale(.5) skew(1deg);
+                transform:rotate(0) scale(.5) skew(1deg);
+        opacity:.1
+    }
+
+    30% {
+        -webkit-transform:rotate(0) scale(.7) skew(1deg);
+                transform:rotate(0) scale(.7) skew(1deg);
+        opacity:.5
+    }
+
+    100% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+                transform:rotate(0) scale(1) skew(1deg);
+        opacity:.1
+    }
+}
+
+@-webkit-keyframes zaloring-alo-circle-fill-anim {
+    0% {
+        -webkit-transform:rotate(0) scale(.7) skew(1deg);
+                transform:rotate(0) scale(.7) skew(1deg);
+        opacity:.2
+    }
+
+    50% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+                transform:rotate(0) scale(1) skew(1deg);
+        opacity:.2
+    }
+
+    100% {
+        -webkit-transform:rotate(0) scale(.7) skew(1deg);
+                transform:rotate(0) scale(.7) skew(1deg);
+        opacity:.2
+    }
+}
+
+@keyframes zaloring-alo-circle-fill-anim {
+    0% {
+        -webkit-transform:rotate(0) scale(.7) skew(1deg);
+                transform:rotate(0) scale(.7) skew(1deg);
+        opacity:.2
+    }
+
+    50% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+                transform:rotate(0) scale(1) skew(1deg);
+        opacity:.2
+    }
+
+    100% {
+        -webkit-transform:rotate(0) scale(.7) skew(1deg);
+                transform:rotate(0) scale(.7) skew(1deg);
+        opacity:.2
+    }
+}
+
+@-webkit-keyframes zaloring-alo-circle-img-anim {
+    0% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+                transform:rotate(0) scale(1) skew(1deg)
+    }
+
+    10% {
+        -webkit-transform:rotate(-25deg) scale(1) skew(1deg);
+                transform:rotate(-25deg) scale(1) skew(1deg)
+    }
+
+    20% {
+        -webkit-transform:rotate(25deg) scale(1) skew(1deg);
+                transform:rotate(25deg) scale(1) skew(1deg)
+    }
+
+    30% {
+        -webkit-transform:rotate(-25deg) scale(1) skew(1deg);
+                transform:rotate(-25deg) scale(1) skew(1deg)
+    }
+
+    40% {
+        -webkit-transform:rotate(25deg) scale(1) skew(1deg);
+                transform:rotate(25deg) scale(1) skew(1deg)
+    }
+
+    50% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+                transform:rotate(0) scale(1) skew(1deg)
+    }
+
+    100% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+                transform:rotate(0) scale(1) skew(1deg)
+    }
+}
+
+@keyframes zaloring-alo-circle-img-anim {
+    0% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+                transform:rotate(0) scale(1) skew(1deg)
+    }
+
+    10% {
+        -webkit-transform:rotate(-25deg) scale(1) skew(1deg);
+                transform:rotate(-25deg) scale(1) skew(1deg)
+    }
+
+    20% {
+        -webkit-transform:rotate(25deg) scale(1) skew(1deg);
+                transform:rotate(25deg) scale(1) skew(1deg)
+    }
+
+    30% {
+        -webkit-transform:rotate(-25deg) scale(1) skew(1deg);
+                transform:rotate(-25deg) scale(1) skew(1deg)
+    }
+
+    40% {
+        -webkit-transform:rotate(25deg) scale(1) skew(1deg);
+                transform:rotate(25deg) scale(1) skew(1deg)
+    }
+
+    50% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+                transform:rotate(0) scale(1) skew(1deg)
+    }
+
+    100% {
+        -webkit-transform:rotate(0) scale(1) skew(1deg);
+                transform:rotate(0) scale(1) skew(1deg)
+    }
+}
+</style>

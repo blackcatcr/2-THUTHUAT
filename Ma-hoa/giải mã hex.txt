@@ -1,0 +1,20 @@
+﻿Cách mở mã hóa Hex design by abc của blogspot
+- Vào Chỉnh sửa html, tìm đoạn mã hóa hex, paste vào trang http://ddecode.com/hexdecoder/
+- Ở phần Decoded results: Tìm từ cần thay (ví dụ: design by alena)
+- Copy từ "alena" vào trang này để chuyển từ đó sang mã hex http://www.convertstring.com/vi/EncodeDecode/HexEncode 
+- Được mã hex của từ alena: 616C656E61 => thêm \x vào đoạn văn bản đó thành: \x61\x6C\x65\x6E\x61 (1)
+- Vào lại trang ddecode nhấn ctrl+F điền: \x61\x6C\x65\x6E\x61 tìm thấy đoạn đó trong mẫu hex gốc
+-> Vào lại trang convertstring điền từ cần thay từ alena ví dụ: nana => được mã hex của từ nana là: 6E616E61 => thêm \x thành: \x6E\x61\x6E\x61 (2)
+- Thay đoạn (2) và đoạn (1) của đoạn hex gốc là được.
+
+giải mã dean
+http://ddecode.com/hexdecoder/
+http://matthewfl.com/unPacker.html
+http://dean.edwards.name/unpacker/
+http://jsbeautifier.org/
+http://www.cuahangtemplate.com/p/encode.html
+
+https://www.javascriptdeobfuscator.com/
+http://jsnice.org/
+
+https://www.danstools.com/javascript-beautify/ chuẩn

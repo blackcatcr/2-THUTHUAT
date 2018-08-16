@@ -1,0 +1,4 @@
+page = location['hostname'];
+if (page != 'www.dailyhyundaivietnam.vn') {
+    document.write(' <style>body,#container{display:none !important; height:0px !important;    background: #000;}</style>')
+}

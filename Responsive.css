@@ -1,0 +1,196 @@
+-------------------------------------------------------------RESPONSIVE----------------------------------------------------
+https://thachpham.com/web-development/html-css/lam-giao-dien-respoonsive.html
+http://lab.maltewassermann.com/viewport-resizer/
+
+
+
+Thẻ meta viewport
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+/* <!-- Ngoài ra thẻ meta viewport này còn có các giá trị như:
+
+width: thiết lập chiều rộng của viewport.
+device-width: Chiều rộng cố định của thiết bị.
+height: thiết lập chiều cao của viewport.
+device-height: Chiều cao cố định của thiết bị.
+initial-scale: Thiết lập mức phóng to lúc ban đầu, giá trị là 1 nghĩa là không phóng to, và khi giá trị được thiết lập thì người dùng không thể phóng to vì nó đã được cố định.
+minimum-scale: Mức phóng to tối thiểu của thiết bị với trình duyệt.
+maximum-scale: Mức phóng to tối đa của thiết bị với trình duyệt.
+user-scalable: Cho phép người dùng phóng to, giá trị là yes hoặc no. --> */
+
+
+@media all and (max-width: 320px) {
+   body {  background: #e7e7e7;  }
+}
+
+/* <!-- @media all and (max-width: 320px) nghĩa là thiết lập breakpoint cho toàn bộ thiết bị (all – media type) --> */
+
+
+@media only screen and (min-width: 320px) and (max-width: 860px) {...}
+
+/* <!-- Tức là query này sẽ chỉ áp dụng cho màn hình desktop, máy tính bảng, smartphone và có kích thước màn hình tối thiểu là 320px nhưng nhỏ hơn 860px. -->
+ */
+
+
+<!-- Bạn có thể tham khảo các size chiều rộng của các thiết bị tại đây, nhưng đa phần một dự án bạn chỉ cần tạo các breakpoint CSS như sau:
+
+max-width: 320px (điện thoại di động, hiển thị chiều dọc)
+max-width: 480px (điện thoại di động, hiển thị chiều ngang)
+max-width: 600px (máy tính bảng, hiển thị chiều dọc)
+max-width: 800px (máy tính bảng, hiển thị chiều ngang)
+max-width: 768px (máy tính bảng loại to, hiển thị chiều dọc)
+max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)
+min-width: 1025px (từ size này trở lên là danh cho desktop thông thường). -->
+
+Ví dụ cấu trúc CSS của một giao diện Responsive thông thường
+
+/* Các CSS này dành cho toàn bộ website và desktop */
+body {
+   background: #fff;
+   color: 333;
+}
+ 
+/* Dành cho điện thoại */
+@media all and (max-width: 480px) {
+ 
+}
+ 
+/* Dành cho máy tính bảng */
+@media all and (max-width: 1024px) {
+ 
+}
+
+
+
+Và khi sử dụng quy trình mobile-first thì CSS của bạn sẽ có cấu trúc thế này:
+
+/* Dành cho điện thoại */
+@media all and (min-width: 320px) {...<span style="line-height: 1.5;">}</span>
+ 
+/* Dành cho máy tính bảng chiều dọc */
+@media all and (min-width: 600px) {...}
+ 
+/* Dành cho máy tính bảng chiều ngang */
+@media all and (min-width: 1024px) {...}
+ 
+/* Dành cho màn hình desktop */
+@media all and (min-width: 1280px) {...}
+
+
+
+
+
+ALL Device Width
+Before you start copying and pasting below, read why you don’t need device specific viewports.
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+}
+/**********
+iPad 3
+**********/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+/* Styles */
+}
+
+/* iPhone 5 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+/* iPhone 6 ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+/* iPhone 6+ ----------- */
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+/* Samsung Galaxy S3 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+/* Styles */
+}
+
+/* Samsung Galaxy S4 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+}

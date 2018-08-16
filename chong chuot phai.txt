@@ -1,0 +1,19 @@
+
+  <script language='JavaScript'>
+
+    var msg=&quot;Thi?t k? web : Cuahangtemplate.com d? mua m?u vui lòng liên h? phone :0167 561 3351 Email:thietketemplate@gmail.com&quot;;
+function disableIE() {if (document.all) {alert(msg);return false;}
+}
+function disableNS(e) {
+if (document.layers||(document.getElementById&amp;&amp;!document.all)) {
+if (e.which==2||e.which==3) {alert(msg);return false;}
+}
+}
+if (document.layers) {
+document.captureEvents(Event.MOUSEDOWN);document.onmousedown=disableNS;
+} else {
+document.onmouseup=disableNS;document.oncontextmenu=disableIE;
+}
+document.oncontextmenu=new Function(&quot;alert(msg);return false&quot;)
+
+</script>

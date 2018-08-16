@@ -1,0 +1,14 @@
+﻿// Get the current page
+var curr_page = window.location.href,
+    next_page = "";
+
+// If current page has a query string, append action to the end of the query string, else
+// create our query string
+if(curr_page.indexOf("?") > -1) {
+    next_page = curr_page+"&action=someaction";
+} else {
+    next_page = curr_page+"?action=someaction";
+}
+
+// Redirect to next page
+window.location = next_page;

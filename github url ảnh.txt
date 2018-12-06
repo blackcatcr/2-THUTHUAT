@@ -3,4 +3,4 @@
 https://rawgit.com/hostblog/cuahangtemplate/017/images/warning_alert_attention_search-512.png --> thiếu master 
 
 https://raw.githubusercontent.com/hostblog/cuahangtemplate/master/017/images/warning_alert_attention_search-512.png
-https://rawgit.com/hostblog/cuahangtemplate/master/017/images/warning_alert_attention_search-512.png
+https://cdn.jsdelivr.net/gh/hostblog/cuahangtemplate/017/images/warning_alert_attention_search-512.png

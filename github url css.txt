@@ -1,1 +1,1 @@
-https://rawgit.com/hostblog/cuahangtemplate/master/001/bootstrap.min.css
+https://cdn.jsdelivr.net/gh/hostblog/cuahangtemplate/001/bootstrap.min.css
